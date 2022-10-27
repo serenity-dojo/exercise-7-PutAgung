@@ -30,7 +30,6 @@ public class Dog extends Pet {
         this.isFed = true;
     }
 
-    @Override
     public String play() {
         return "plays with bone";
     }
