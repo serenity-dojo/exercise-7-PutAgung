@@ -1,45 +1,36 @@
 package com.serenitydojo;
 
+import com.serenitydojo.model.Animals;
 import com.serenitydojo.model.Feeder;
+import com.serenitydojo.model.FoodTypes;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class WhenFeedingTheAnimals {
 
+
     @Test
     public void shouldFeedCatsTuna() {
-        Feeder feeder = new Feeder();
-
-        String food = feeder.feeds("Cat", false);
-
-        Assert.assertEquals("Tuna", food);
+        FoodTypes food = Feeder.feeds(Animals.CAT, false, FoodTypes.TUNA);
+        Assert.assertEquals( FoodTypes.TUNA, food);
     }
 
     @Test
     public void shouldFeedHamstersCabbage() {
-        Feeder feeder = new Feeder();
-
-        String food = feeder.feeds("Hamster", false);
-
-        Assert.assertEquals("Cabbage", food);
+        FoodTypes food = Feeder.feeds(Animals.HAMSTER, false, FoodTypes.CABBAGE);
+        Assert.assertEquals(FoodTypes.CABBAGE, food);
     }
 
     @Test
     public void shouldFeedDogsDogFood() {
-        Feeder feeder = new Feeder();
-
-        String food = feeder.feeds("Dog", false);
-
-        Assert.assertEquals("Dog Food", food);
+        FoodTypes food = Feeder.feeds(Animals.DOG, false, FoodTypes.DOG_FOOD);
+        Assert.assertEquals(FoodTypes.DOG_FOOD, food);
     }
 
     @Test
     public void shouldFeedPremiumCatsPremiumFood() {
-        Feeder feeder = new Feeder();
-
-        String food = feeder.feeds("Cat", true);
-
-        Assert.assertEquals("Salmon", food);
+        FoodTypes food = Feeder.feeds(Animals.CAT, true, FoodTypes.SALMON);
+        Assert.assertEquals(FoodTypes.SALMON, food);
 
     }
 }

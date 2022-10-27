@@ -2,9 +2,7 @@ package com.serenitydojo.checks;
 
 import org.junit.Test;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
 import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -12,13 +10,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class EnumsTest {
     @Test
     public void theFoodTypeEnumShouldExist() throws ClassNotFoundException {
-        assertThat(Class.forName("com.serenitydojo.model.FoodType")).isNotNull();
-        assertThat(Class.forName("com.serenitydojo.model.FoodType").isEnum()).isNotNull();
+        assertThat(Class.forName("com.serenitydojo.model.FoodTypes")).isNotNull();
+        assertThat(Class.forName("com.serenitydojo.model.FoodTypes").isEnum()).isNotNull();
     }
 
     @Test
     public void theFoodTypeEnumShouldHaveSomeValues() throws ClassNotFoundException {
-        assertThat(Class.forName("com.serenitydojo.model.FoodType").getEnumConstants()).isNotEmpty();
+        assertThat(Class.forName("com.serenitydojo.model.FoodTypes").getEnumConstants()).isNotEmpty();
     }
 
     @Test
